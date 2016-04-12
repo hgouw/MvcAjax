@@ -1,0 +1,27 @@
+﻿@model IEnumerable<AJAX.Models.Property>
+
+Current Time = @DateTime.Now.ToLongTimeString();<br />
+
+<table style="border:1px solid;background-color:silver">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number)
+            @Html.DisplayFor(modelItem => item.Street)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+    </tr>
+}
+
+</table>
